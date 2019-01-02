@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Top Headlines</ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" (click)="openUserFeed()">
+        <ion-icon slot="icon-only" name="md-funnel"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshNews()">
+    <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+  </ion-refresher>
+  <app-newscard [news]="news" (detail)="newsDetails(i)" *ngFor="let news of newsArr; let i=index;"></app-newscard>
+  <ion-card *ngIf="newsFlag!=''">
+    <ion-card-content text-center>
+      {{newsFlag}}
+    </ion-card-content>
+  </ion-card>
+  <ion-infinite-scroll threshold="40%" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="null" loadingText="Loading more news...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,33 @@
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+ion-label {
+    text-align: center;
+    display: grid;
+    opacity: .5;
+}
+
+ion-label:last-of-type {
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px 10px;
+    font-weight: normal;
+    text-align: justify;
+    border-bottom: 1px solid grey;
+    line-height: 1.3em;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 10px;
+    text-align: justify;
+    line-height: 1.3em;
+    font-size: 16px;
+}

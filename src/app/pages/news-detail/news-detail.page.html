@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button size="small" (click)="dismiss()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{title | uppercase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4>{{news.title}}</h4>
+  <ion-label *ngIf="news.author">by {{news.author}}</ion-label>
+  <ion-label>{{news.publishedAt | date: 'medium'}}</ion-label>
+  <img [src]="news.urlToImage" *ngIf="news.urlToImage">
+  <h5>{{news.description}}</h5>
+  <p>{{news.content}}</p>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" size="large" (click)="openInBrowser()">See in Browser</ion-button>
+  </ion-toolbar>
+</ion-footer>

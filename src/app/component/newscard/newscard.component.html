@@ -1,0 +1,11 @@
+<ion-card (click)="newsDetails()">
+    <img [src]="news.urlToImage" *ngIf="news.urlToImage" />
+    <ion-card-content>
+        <ion-card-title>
+            {{news.title}}
+        </ion-card-title>
+        <p>
+            {{news.description}}
+        </p>
+    </ion-card-content>
+</ion-card>

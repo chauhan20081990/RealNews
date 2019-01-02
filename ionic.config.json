@@ -1,5 +1,7 @@
 {
   "name": "RealNews",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

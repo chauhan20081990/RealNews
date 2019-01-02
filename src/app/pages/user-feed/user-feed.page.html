@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button size="small" (click)="dismiss()">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Set Your Feed</ion-title>
+      <ion-buttons slot="end">
+        <ion-button size="small" (click)="resetFeed()">
+          Reset
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <!-- For Top-heading page -->
+    <ion-list class="top-heading" *ngIf="type=='top'">
+      <ion-item lines="none">
+        <ion-label>Country</ion-label>
+        <ion-select cancelText="Cancel" okText="Select" [(ngModel)]="feedData.country" (ngModelChange)="selectChange('country')">
+          <ion-select-option *ngFor="let cn of country | keyvalue" [value]="cn.value">{{cn.key}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label>Category</ion-label>
+        <ion-select multiple="true" cancelText="Cancel" okText="Select" [(ngModel)]="feedData.category" (ngModelChange)="selectChange('category')">
+          <ion-select-option *ngFor="let cat of category" [value]="cat">{{cat | titlecase}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none" text-center>
+        <ion-label>OR</ion-label>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label>Source</ion-label>
+        <ion-select multiple="true" cancelText="Cancel" okText="Select" [(ngModel)]="feedData.source" (ngModelChange)="selectChange('source')">
+          <ion-select-option *ngFor="let src of source | keyvalue" [value]="src.value">{{src.key}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  
+    <!-- For All news page -->
+    <ion-list class="top-heading" *ngIf="type=='all'">
+      <ion-item lines="none">
+        <ion-label>language</ion-label>
+        <ion-select multiple="true" cancelText="Cancel" okText="Select" [(ngModel)]="feedData.language">
+          <ion-select-option *ngFor="let lang of language | keyvalue" [value]="lang.value">{{lang.key}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label>Source</ion-label>
+        <ion-select multiple="true" cancelText="Cancel" okText="Select" [(ngModel)]="feedData.sourceTop">
+          <ion-select-option *ngFor="let src of source | keyvalue" [value]="src.value">{{src.key}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label>Sort By</ion-label>
+        <ion-select cancelText="Cancel" okText="Select" [(ngModel)]="feedData.sortBy">
+          <ion-select-option *ngFor="let sort of sortBy" [value]="sort">{{sort | titlecase}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  
+    <div class="applybtn">
+      <ion-button expand="block" size="large" (click)="apply()">
+        Apply
+      </ion-button>
+    </div>
+  
+  </ion-content>

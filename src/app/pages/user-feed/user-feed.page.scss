@@ -1,0 +1,23 @@
+ion-list {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #EEE;
+    margin: 10px;
+    border-radius: 10px;
+}
+ion-item {
+    --background: #EEE;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.applybtn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    padding: 40px;
+}
+.top-heading {
+    margin-top: 30px;
+}

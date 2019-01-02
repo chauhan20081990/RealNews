@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Converter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>Amount</ion-label>
+        <ion-input placeholder="Enter Amount" [(ngModel)]="amount"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Currency</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="selectedCur">
+          <ion-select-option *ngFor="let currency of currencies | keyvalue" [value]="currency.key">{{currency.value.currencyName}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button size="large" expand="block" fill="solid" (click)="convert()">Convert</ion-button>
+    </ion-list>
+  </ion-card>
+
+  <ion-card *ngIf="convertedVal">
+    <ion-card-header>{{convertedVal | number : '.2-2'}}{{convertedCur}}</ion-card-header>
+  </ion-card>
+
+</ion-content>
