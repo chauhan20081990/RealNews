@@ -9,8 +9,8 @@
   <ion-card>
     <ion-list>
       <ion-item>
-        <ion-label>Amount</ion-label>
-        <ion-input placeholder="Enter Amount" [(ngModel)]="amount"></ion-input>
+        <ion-label>INR</ion-label>
+        <ion-input placeholder="Enter INR" [(ngModel)]="amount"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Currency</ion-label>
@@ -23,7 +23,7 @@
   </ion-card>
 
   <ion-card *ngIf="convertedVal">
-    <ion-card-header>{{convertedVal | number : '.2-2'}}{{convertedCur}}</ion-card-header>
+    <ion-card-header>{{convertedVal | number : '.2-2'}} INR</ion-card-header>
   </ion-card>
 
 </ion-content>
